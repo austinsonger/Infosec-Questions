@@ -632,41 +632,41 @@ IDs examine specific host-based actions, such as what applications are being use
 
 ### 108. Is there an acceptable level of risk?
 
-109. How do you measure risk? Can you give an example of a specific metric that measures information security risk?
+### 109. How do you measure risk? Can you give an example of a specific metric that measures information security risk?
 
-110. Can you give me an example of risk trade-offs (e.g. risk vs cost)?
+### 110. Can you give me an example of risk trade-offs (e.g. risk vs cost)?
 
-111. What is incident management?
+### 111. What is incident management?
 
-112. What is business continuity management? How does it relate to security?
+### 112. What is business continuity management? How does it relate to security?
 
-113. What is the primary reason most companies haven’t fixed their vulnerabilities?
+### 113. What is the primary reason most companies haven’t fixed their vulnerabilities?
 
-114. What’s the goal of information security within an organization?
+### 114. What’s the goal of information security within an organization?
 
-115. What’s the difference between a threat, vulnerability, and a risk?
+### 115. What’s the difference between a threat, vulnerability, and a risk?
 
-116. If you were to start a job as head engineer or CSO at a Fortune 500 company due to the previous guy being fired for incompetence, what would your priorities be? [Imagine you start on day one with no knowledge of the environment]
+### 116. If you were to start a job as head engineer or CSO at a Fortune 500 company due to the previous guy being fired for incompetence, what would your priorities be? [Imagine you start on day one with no knowledge of the environment]
 
-117. As a corporate information security professional, what’s more important to focus on: threats or vulnerabilities?
+### 117. As a corporate information security professional, what’s more important to focus on: threats or vulnerabilities?
 
-118. If I’m on my laptop, here inside my company, and I have just plugged in my network cable. How many packets must leave my NIC in order to complete a traceroute to twitter.com?
+### 118. If I’m on my laptop, here inside my company, and I have just plugged in my network cable. How many packets must leave my NIC in order to complete a traceroute to twitter.com?
 
-119. How would you build the ultimate botnet?
+### 119. How would you build the ultimate botnet?
 
-120. What are the primary design flaws in HTTP, and how would you improve it?
+### 120. What are the primary design flaws in HTTP, and how would you improve it?
 
-121. If you could re-design TCP, what would you fix?
+### 121. If you could re-design TCP, what would you fix?
 
-122. What is the one feature you would add to DNS to improve it the most?
+### 122. What is the one feature you would add to DNS to improve it the most?
 
-123. What is likely to be the primary protocol used for the Internet of Things in 10 years?
+### 123. What is likely to be the primary protocol used for the Internet of Things in 10 years?
 
-124. If you had to get rid of a layer of the OSI model, which would it be?
+### 124. If you had to get rid of a layer of the OSI model, which would it be?
 
-125. What is residual risk?
+### 125. What is residual risk?
 
-126. What is the difference between a vulnerability and an exploit?
+### 126. What is the difference between a vulnerability and an exploit?
 
 
 ## [Security audits and incident response](##security-audits-and-incident-response)
