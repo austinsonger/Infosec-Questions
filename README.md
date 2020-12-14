@@ -4,14 +4,14 @@
 
 ## [General](##general)
 
-1. What is information security and how is it achieved?
+### 1. What is information security and how is it achieved?
 
 > Information Security is not only about securing information from unauthorized access. Information Security is basically the practice of preventing unauthorized access, use, disclosure, disruption, modification, inspection, recording or destruction of information.
 
 
-2. What are the core principles of information security?
+### 2. What are the core principles of information security?
 
-> Information Security programs are build around 3 objectives, commonly known as CIA – Confidentiality, Integrity, Availability.
+Information Security programs are build around 3 objectives, commonly known as CIA – Confidentiality, Integrity, Availability.
 
 > Confidentiality – means information is not disclosed to unauthorized individuals, entities and process. For example if we say I have a password for my Gmail account but someone saw while I was doing a login into Gmail account. In that case my password has been compromised and Confidentiality has been breached.
 
@@ -23,127 +23,191 @@
 Denial of service attack is one of the factor that can hamper the availability of information.
 
 
-3. What is non-repudiation (as it applies to IT security)?
+### 3. What is non-repudiation (as it applies to IT security)?
 
+> Non repudiation – means one party cannot deny receiving a message or a transaction nor can the other party deny sending a message or a transaction. For example in cryptography it is sufficient to show that message matches the digital signature signed with sender’s private key and that sender could have a sent a message and nobody else could have altered it in transit. Data Integrity and Authenticity are pre-requisites for Non repudiation.
 
-4. What is the relationship between information security and data availability?
 
+### 4. What is the relationship between information security and data availability?
 
-5. What is a security policy and why do we need one?
+> Information security encompasses the tactics and processes used to protect data and ensure that only authenticated and approved users have access to authorized data.
 
 
-6. What is the difference between logical and physical security? Can you give an example of both?
+### 5. What is a security policy and why do we need one?
 
+The goal of these network security policies is to address security threats and implement strategies to mitigate IT security vulnerabilities, as well as defining how to recover when a network intrusion occurs.
 
-7. What’s an acceptable level of risk?
+### 6. What is the difference between logical and physical security? Can you give an example of both?
 
+Logical security protects computer software by discouraging user excess by implementing user identifications, passwords, authentication, biometrics and smart cards. Physical security prevents and discourages attackers from entering a building by installing fences, alarms, cameras, security guards and dogs, electronic access control, intrusion detection and administration access controls. The difference between logical security and physical security is logical security protects access to computer systems and physical security protects the site and everything located within the site.
 
-8. What are the most common types of attacks that threaten enterprise data security?
 
+### 7. What’s an acceptable level of risk?
 
-9. What is the difference between a threat and a vulnerability?
+Acceptable risk is a risk exposure that is deemed acceptable to an individual, organization, or nation.
 
 
-10. Can you give me an example of common security vulnerabilities?
+### 8. What are the most common types of attacks that threaten enterprise data security?
 
+Denial-of-service (DoS) and distributed denial-of-service (DDoS) attacks. ...
 
-11. Are you familiar with any security management frameworks such as ISO/IEC 27002?
+Man-in-the-middle (MitM) attack. ...
 
+Phishing and spear phishing attacks. ...
 
-12. What is a security control?
+Drive-by attack. ...
 
+Password attack. ...
 
-13. What are the different types of security control?
+SQL injection attack. ...
 
+Cross-site scripting (XSS) attack. ...
 
-14. Can you describe the information lifecycle? How do you ensure information security at each phase?
+Eavesdropping attack.
 
 
-15. What is Information Security Governance?
+### 9. What is the difference between a threat and a vulnerability?
 
+Threat is what an organization is defending itself against, e.g. a DoS attack. Vulnerabilities are the gaps or weaknesses that undermine an organization's IT security efforts, e.g.
 
-16. What are your professional values? Why are professional ethics important in the information security field?
+### 10. Can you give me an example of common security vulnerabilities?
 
 
-17. Are open-source projects more or less secure than proprietary ones?
 
+### 11. Are you familiar with any security management frameworks such as ISO/IEC 27002?
 
-18. Who do you look up to within the field of Information Security? Why?
 
 
-19. Where do you get your security news from?
+### 12. What is a security control?
 
+Security controls are safeguards or countermeasures to avoid, detect, counteract, or minimize security risks to physical property, information, computer systems, or other assets. In the field of information security, such controls protect the confidentiality, integrity and availability of information.
 
-20. What’s the difference between symmetric and public-key cryptography?
+### 13. What are the different types of security control?
 
+Examples include physical controls such as fences, locks, and alarm systems; technical controls such as antivirus software, firewalls, and IPSs; and administrative controls like separation of duties, data classification, and auditing.
 
-21. What kind of network do you have at home?
+### 14. Can you describe the information lifecycle? How do you ensure information security at each phase?
 
+Information lifecycle is the stage through which every (Written or computerized) record goes through from its creation to its final archiving or destruction. These stages may include change of format or recording media for easier access or more secure storage. ... We start with disconnected information.
 
-22. What are the advantages offered by bug bounty programs over normal testing practices?
+we will briefly describe the Information Security Program lifecycle (Classification, Safeguarding, Dissemination, Declassification, and Destruction), why we need it, how it is implemented in the DoD and locate policies relevant to the DoD Information Security Program.
 
+### 15. What is Information Security Governance?
 
-23. What are your first three steps when securing a Linux server?
+IT security governance is the system by which an organization directs and controls IT security (adapted from ISO 38500). ... Governance specifies the accountability framework and provides oversight to ensure that risks are adequately mitigated, while management ensures that controls are implemented to mitigate risks.
 
+### 16. What are your professional values? Why are professional ethics important in the information security field?
 
-24. What are your first three steps when securing a Windows server?
+A code of ethics is important because it clearly lays out the rules for behavior and provides the groundwork for a preemptive warning. Regardless of size, businesses count on their management staff to set a standard of ethical conduct for other employees to follow.
 
 
-25. Who’s more dangerous to an organization, insiders or outsiders?
+### 17. Are open-source projects more or less secure than proprietary ones?
 
+Proprietary software is more secure than open-source software. This myth comes from many prejudices. But a commercial license doesn't assure security. Unlike proprietary software, open-source software is transparent about potential vulnerabilities.
 
-26. Why is DNS monitoring important?
 
+### 18. Who do you look up to within the field of Information Security? Why?
 
-27. How would traceroute help you find out where a breakdown in communication is?
 
 
-28. Why would you want to use SSH from a Windows PC?
+### 19. Where do you get your security news from?
 
 
-29. How would you find out what a POST code means?
 
+### 20. What’s the difference between symmetric and public-key cryptography?
 
-30. What is the difference between a black hat and a white hat?
 
 
-31. What do you think of social networking sites such as Facebook and LinkedIn?
+### 21. What kind of network do you have at home?
 
 
-32. Why are internal threats often more successful than external threats?
 
+### 22. What are the advantages offered by bug bounty programs over normal testing practices?
 
-33. Why is deleted data not truly gone when you delete it?
 
 
-34. What is the Chain of Custody?
+### 23. What are your first three steps when securing a Linux server?
 
 
-35. How would you permanently remove the threat of data falling into the wrong hands?
 
+### 24. What are your first three steps when securing a Windows server?
 
-36. What is exfiltration?
 
 
-37. How do you protect your home wireless access point?
+### 25. Who’s more dangerous to an organization, insiders or outsiders?
 
 
-38. If you were going to break into a database-based website, how would you do it?
 
+### 26. Why is DNS monitoring important?
 
-39. What is the CIA triangle?
 
 
-40. What is the difference between information protection and information assurance?
+### 27. How would traceroute help you find out where a breakdown in communication is?
 
 
-41. How would you lock down a mobile device?
 
+### 28. Why would you want to use SSH from a Windows PC?
 
-42. What is the difference between closed-source and open-source? Which is better?
 
 
-43. What is your opinion on hacktivist groups such as Anonymous?
+### 29. How would you find out what a POST code means?
+
+
+
+### 30. What is the difference between a black hat and a white hat?
+
+
+
+### 31. What do you think of social networking sites such as Facebook and LinkedIn?
+
+
+
+### 32. Why are internal threats often more successful than external threats?
+
+
+
+### 33. Why is deleted data not truly gone when you delete it?
+
+
+
+### 34. What is the Chain of Custody?
+
+
+
+### 35. How would you permanently remove the threat of data falling into the wrong hands?
+
+
+
+### 36. What is exfiltration?
+
+
+
+### 37. How do you protect your home wireless access point?
+
+
+
+### 38. If you were going to break into a database-based website, how would you do it?
+
+
+
+### 39. What is the CIA triangle?
+
+
+
+### 40. What is the difference between information protection and information assurance?
+
+
+
+### 41. How would you lock down a mobile device?
+
+
+
+### 42. What is the difference between closed-source and open-source? Which is better?
+
+
+
+### 43. What is your opinion on hacktivist groups such as Anonymous?
+
 
 
 ## [Network Security](##network-security)
