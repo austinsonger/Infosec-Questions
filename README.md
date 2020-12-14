@@ -1,6 +1,10 @@
 # Infosec-Questions
 
-# [General](#general)
+
+
+
+
+## [General](##general)
 
 1. What is information security and how is it achieved?
 
