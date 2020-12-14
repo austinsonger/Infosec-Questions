@@ -1,5 +1,8 @@
 # Infosec-Questions
 
+##General
+
+##Network Security
 
 
 
@@ -92,9 +95,9 @@
 43. What is your opinion on hacktivist groups such as Anonymous?
 
 
-# [Network Security](#network-security)
+## [Network Security](##network-security)
 
-## [What port does ping work over?](##what-port-does-ping-work-over)
+### [What port does ping work over?](##what-port-does-ping-work-over)
 
 44. What port does ping work over?
 
@@ -146,7 +149,7 @@ access the corporate network.
 67. What is the difference between an HIDS and a NIDS?
 
 
-# [Application security](#application-security)
+## [Application security](##application-security)
 
 68. Describe the last program or script that you wrote. What problem did it solve?
 
@@ -176,7 +179,7 @@ access the corporate network.
 
 81. On a Windows network, why is it easier to break into a local account than an AD account?
 
-# [Security architect](#security-architect)
+## [Security architect](##security-architect)
 
 82. Explain data leakage and give examples of some of the root causes.
 
@@ -230,7 +233,7 @@ access the corporate network.
 
 107. You need to reset a password-protected BIOS configuration. What do you do?
 
-# [Risk management](#risk-management)
+## [Risk management](##risk-management)
 
 108. Is there an acceptable level of risk?
 
@@ -270,7 +273,7 @@ access the corporate network.
 
 126. What is the difference between a vulnerability and an exploit?
 
-# [Security audits and incident response](#security-audits-and-incident-response)
+## [Security audits and incident response](##security-audits-and-incident-response)
 
 127. What is an IT security audit?
 
@@ -324,7 +327,7 @@ access the corporate network.
 
 152. Why would you bring in an outside contractor to perform a penetration test?
 
-# [Cryptography](#cryptography)
+## [Cryptography](##cryptography)
 
 153. What is secret-key cryptography?
 
