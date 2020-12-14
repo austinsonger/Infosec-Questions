@@ -804,57 +804,147 @@ A risk is acceptable when: it falls below an arbi- trary defined probability; it
 
 ### 109. How do you measure risk? Can you give an example of a specific metric that measures information security risk?
 
+Risk = Likelihood of an adverse event X Impact of the adverse event
+
+This usually assumes a time period of a year and calculates the risk due to a single specific cause. When statistically independent multiple causes are considered, the individual risks need to be added to obtain the overall risk. A risk matrix is usually constructed that divides both likelihood and impact values into discrete ranges that can be used to classify applicable causes by the degree of risk they represent - often reducing risk to something as simple as high, medium, and low.
+
+In the equation above, the likelihood of an adverse event is sometimes represented as the product of the probability that an exploitable weakness is present, and the probability that such a weakness is exploited.
+
+If you are going to measure risk, then you will need some type of framework or methodology to use. Risk measurement can have varying degrees of rigor. A few examples to investigate:
+
+Octave - Using OCTAVE, small teams across business units and IT work together to address the security needs of the organization.
+FAIR (Factor analysis of information risk) - taxonomy of the factors that contribute to risk and how they affect each other. It is primarily concerned with establishing accurate probabilities for the frequency and magnitude of loss events. It is not, per se, a “cookbook” that describes how to perform an enterprise (or individual) risk assessment.
+NIST Risk Management Process - a key component of a holistic, organization-wide risk management process as defined in NIST Special Publication 800-39, Managing Information Security Risk: Organization, Mission, and Information System View. Risk management processes include: (i) framing risk; (ii) assessing risk; (iii) responding to risk; and (iv) monitoring risk.
+ISO 27001 Risk Management
+
 
 ### 110. Can you give me an example of risk trade-offs (e.g. risk vs cost)?
 
+A trade-off is an exchange in which one benefit is given up in order to obtain another.
 
 ### 111. What is incident management?
 
+Incident management (IcM) is a term describing the activities of an organization to identify, analyze, and correct hazards to prevent a future re-occurrence. If not managed, an incident can escalate into an emergency, crisis or a disaster.
 
 ### 112. What is business continuity management? How does it relate to security?
 
+Business continuity management (BCM) is the strategic and tactical capability of the organization to plan and respond to incidents and business disruptions in order to continue business operations at an acceptable, pre-defined level, according to the Business Continuity Institute.
 
 ### 113. What is the primary reason most companies haven’t fixed their vulnerabilities?
 
 
+
 ### 114. What’s the goal of information security within an organization?
+
+Three primary goals of information security are preventing the loss of availability, the loss of integrity, and the loss of confidentiality for systems and data. Most security practices and controls can be traced back to preventing losses in one or more of these areas.
 
 
 ### 115. What’s the difference between a threat, vulnerability, and a risk?
+
+A threat refers to a new or newly discovered incident that has the potential to harm a system or your company overall. There are three main types of threats:
+
+Natural threats, such as floods, hurricanes, or tornadoes
+Unintentional threats, like an employee mistakenly accessing the wrong information
+Intentional threats, such as spyware, malware, adware companies, or the actions of a disgruntled employee
+
+A vulnerability refers to a known weakness of an asset (resource) that can be exploited by one or more attackers. In other words, it is a known issue that allows an attack to succeed.
+
+Risk is defined as the potential for loss or damage when a threat exploits a vulnerability. Examples of risk include:
+
+Financial losses
+
+Loss of privacy
+
+Damage to your reputation Rep
+
+Legal implications
+
+Even loss of life
+
+Risk can also be defined as:
+
+Risk = Threat x Vulnerability
 
 
 ### 116. If you were to start a job as head engineer or CSO at a Fortune 500 company due to the previous guy being fired for incompetence, what would your priorities be? [Imagine you start on day one with no knowledge of the environment]
 
 
+
 ### 117. As a corporate information security professional, what’s more important to focus on: threats or vulnerabilities?
+
+Threat – Anything that can exploit a vulnerability, intentionally or accidentally, and obtain, damage, or destroy an asset.
+
+A threat is what we’re trying to protect against.
+
+Vulnerability – Weaknesses or gaps in a security program that can be exploited by threats to gain unauthorized access to an asset.
+
+A vulnerability is a weakness or gap in our protection efforts.
+
+Both are equally important and should be managed to avoid leaking of sensitive corporate information.
+
 
 
 ### 118. If I’m on my laptop, here inside my company, and I have just plugged in my network cable. How many packets must leave my NIC in order to complete a traceroute to twitter.com?
 
 
+
+
 ### 119. How would you build the ultimate botnet?
+
+
 
 
 ### 120. What are the primary design flaws in HTTP, and how would you improve it?
 
+HTTP is a difficult one. It was never designed as a universal carrier and it was originally designed as a stateless protocol, so to call out its limitations as such as “design defects” seems a bit harsh.
+
+However, there are a few things that can be legitimately considered defects.
+
+Commands are text-based, which slows down parsing considerably.
+
+It’s point-to-point. This wouldn’t have mattered, but copyright lawyers blocked Squid networks from transparently store-and-forwarding data, which means the protocol has to do the load-balancing.
+
+It’s point-to-point. You can’t receive a multicast stream via HTTP, which is why you have to tolerate awful video, horrible lag and massive delays whilst watching.
+
+URLs break IPv6 standards, which caused an awful mess. As IPv6 was first, that isn’t ok.
+
+URLs cannot support all forms of hypertext. Ted Neilson’s Xanadu uses a hypertext system where you can place elements in any order and recall any version of any page. He basically invented change management systems as well as hypertext. Well, of course, Xanadu still doesn’t really exist, but change management systems do. However, there is no instruction I can place in the URL - other than to access a CGI script - that can handle change management. The order-independence feature (which he created a prototype of under the name of ZigZag) has no parallel at all. HTTP therefore is not a hypertext transport system, but a hypercard transport system minus the trademark infringing name.
+
+HTTP has no means to allow for NEMO (Network Mobility) or truly mobile nodes (ie: no forwarder or mailbox). It’s designed on the assumption that machines are static. Not a terribly good assumption that protocol designers have had to hack their way around.
+
+HTTP is rather poorly maintained as a protocol, which is why a commercially developed replacement (SPDY) is starting to replace it, where we have no meaningful assurances that SPDY is unencumbered and contains no undocumented features that get used by proprietary, closed-source browsers for a fee.
+
 
 ### 121. If you could re-design TCP, what would you fix?
+
+The fundamental flaw within TCP/IP is in its inherent openness, which consequently results in a lack of security. This openness is largely a by-product of the address-defined nature of TCP/IP.
+
+Abstract: QUIC is a new UDP-based transport protocol for the Internet, and specifically, the web. Originally designed and deployed by Google, it already makes up 35% of Google's egress traffic, which corresponds to about 7% of all Internet traffic.
 
 
 ### 122. What is the one feature you would add to DNS to improve it the most?
 
 
+
+
 ### 123. What is likely to be the primary protocol used for the Internet of Things in 10 years?
+
+IoT communication protocols are modes of communication that ensure optimum security to the data being exchanged between IoT connected devices. The IoT devices can be connected via an IP network or a non-IP network. Though there is a difference in their range, power, and memory used.
 
 
 ### 124. If you had to get rid of a layer of the OSI model, which would it be?
 
+The Presentation and Session layers from the OSI/ISO model are part of the Application layer in TCP/IP. In other words, in the TCP/IP model, the Application layer is responsible for all the functions that are performed by Presentation and Session layers in the OSI model. You may say that the OSI/ISO model is more detailed.
+
 
 ### 125. What is residual risk?
+
+The residual risk is the amount of risk or danger associated with an action or event remaining after natural or inherent risks have been reduced by risk controls. The general formula to calculate residual risk is where the general concept of risk is or, alternatively.
 
 
 ### 126. What is the difference between a vulnerability and an exploit?
 
+What is the difference between a vulnerability and an exploit? A weakness of a system, process, or architecture that could lead to compromised information or unauthorized access is known as a vulnerability. The act of taking advantage of a vulnerability is known as an exploit.
 
 
 ## [Security audits and incident response](##security-audits-and-incident-response)
