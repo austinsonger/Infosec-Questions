@@ -891,6 +891,7 @@ A risk is acceptable when: it falls below an arbi- trary defined probability; it
 
 
 
+
 ### 134. What types of RFC or change management software have you used?
 
 
@@ -988,100 +989,100 @@ A risk is acceptable when: it falls below an arbi- trary defined probability; it
 
 ## [Cryptography](##cryptography)
 
-153. What is secret-key cryptography?
+### 153. What is secret-key cryptography?
 
-154. What is public-key cryptography?
+### 154. What is public-key cryptography?
 
-155. What is a session key?
+### 155. What is a session key?
 
-156. What is RSA?
+### 156. What is RSA?
 
-157. How fast is RSA?
+### 157. How fast is RSA?
 
-158. What would it take to break RSA?
+### 158. What would it take to break RSA?
 
-159. Are strong primes necessary for RSA?
+### 159. Are strong primes necessary for RSA?
 
-160. How large a module (key) should be used in RSA?
+### 160. How large a module (key) should be used in RSA?
 
-161. How large should the primes be?
+### 161. How large should the primes be?
 
-162. How is RSA used for authentication in practice? What are RSA digital signatures?
+### 162. How is RSA used for authentication in practice? What are RSA digital signatures?
 
-163. What are the alternatives to RSA?
+### 163. What are the alternatives to RSA?
 
-164. Is RSA currently in use today?
+### 164. Is RSA currently in use today?
 
-165. What are DSS and DSA?
+### 165. What are DSS and DSA?
 
-166. What is difference between DSA and RSA?
+### 166. What is difference between DSA and RSA?
 
-167. Is DSA secure?
+### 167. Is DSA secure?
 
-168. What are special signature schemes?
+### 168. What are special signature schemes?
 
-169. What is a blind signature scheme?
+### 169. What is a blind signature scheme?
 
-170. What is a designated confirmer signatures?
+### 170. What is a designated confirmer signatures?
 
-171. What is a fail-stop signature scheme?
+### 171. What is a fail-stop signature scheme?
 
-172. What is a group signature?
+### 172. What is a group signature?
 
-173. What is blowfish?
+### 173. What is blowfish?
 
-174. What is SAFER?
+### 174. What is SAFER?
 
-175. What is FEAL?
+### 175. What is FEAL?
 
-176. What is Shipjack?
+### 176. What is Shipjack?
 
-177. What is stream cipher?
+### 177. What is stream cipher?
 
-178. What is the advantage of public-key cryptography over secret-key cryptography?
+### 178. What is the advantage of public-key cryptography over secret-key cryptography?
 
-179. What is the advantage of secret-key cryptography over public-key cryptography?
+### 179. What is the advantage of secret-key cryptography over public-key cryptography?
 
-180. What is Message Authentication Code (MAC)?
+### 180. What is Message Authentication Code (MAC)?
 
-181. What is a block cipher?
+### 181. What is a block cipher?
 
-182. What are different block cipher modes of operation?
+### 182. What are different block cipher modes of operation?
 
-183. What is a stream cipher? Name a most widely used stream cipher.
+### 183. What is a stream cipher? Name a most widely used stream cipher.
 
-184. What is one-way hash function?
+### 184. What is one-way hash function?
 
-185. What is collision when we talk about hash functions?
+### 185. What is collision when we talk about hash functions?
 
-186. What are the applications of a hash function?
+### 186. What are the applications of a hash function?
 
-187. What is trapdoor function?
+### 187. What is trapdoor function?
 
-188. Cryptographically speaking, what is the main method of building a shared secret over a public medium?
+### 188. Cryptographically speaking, what is the main method of building a shared secret over a public medium?
 
-189. What’s the difference between Diffie-Hellman and RSA?
+### 189. What’s the difference between Diffie-Hellman and RSA?
 
-190. What kind of attack is a standard Diffie-Hellman exchange vulnerable to?
+### 190. What kind of attack is a standard Diffie-Hellman exchange vulnerable to?
 
-191. What’s the difference between encoding, encryption, and hashing?
+### 191. What’s the difference between encoding, encryption, and hashing?
 
-192. In public-key cryptography you have a public and a private key, and you often perform both encryption and signing functions. Which key is used for which function?
+### 192. In public-key cryptography you have a public and a private key, and you often perform both encryption and signing functions. Which key is used for which function?
 
-193. What’s the difference between Symmetric and Asymmetric encryption?
+### 193. What’s the difference between Symmetric and Asymmetric encryption?
 
-194. If you had to both encrypt and compress data during transmission, which would you do first, and why?
+### 194. If you had to both encrypt and compress data during transmission, which would you do first, and why?
 
-195. What is SSL and why is it not enough when it comes to encryption?
+### 195. What is SSL and why is it not enough when it comes to encryption?
 
-196. What is salting, and why is it used?
+### 196. What is salting, and why is it used?
 
-197. What are salted hashes?
+### 197. What are salted hashes?
 
-198. What is the Three-way handshake? How can it be used to create a DOS attack?
+### 198. What is the Three-way handshake? How can it be used to create a DOS attack?
 
-199. What’s more secure, SSL or HTTPS?
+### 199. What’s more secure, SSL or HTTPS?
 
-200. Can you describe rainbow tables?
+### 200. Can you describe rainbow tables?
 
 
