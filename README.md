@@ -474,82 +474,183 @@ IDs examine specific host-based actions, such as what applications are being use
 
 ### 70. How would you implement a secure login field on a high traffic website where performance is a consideration?
 
+As the login field is a parameter that the server receives from the user, we make sure to use input validation to avoid attackers like SQL Injection or XSS.
 
+Input validation is a best practice which by chance may help defend against these attacks, but ultimately you should be using prepared statement/parameterised queries for SQL to prevent SQL injection and encode/escape user input to prevent XSS.
 
 ### 71. What are the various ways to handle account brute forcing?
 
+Account Lockouts After Failed Attempts. ...
+
+Make the Root User Inaccessible via SSH. ...
+
+Modify the Default Port. ...
+
+Use CAPTCHA. ...
+
+Limit Logins to a Specified IP Address or Range. ...
+
+Employ 2-Factor Authentication (2FA) ...
+
+Use Unique Login URLs. ...
+
+Monitor Your Server Logs.
 
 
 ### 72. What is cross-site request forgery?
 
+ross-site request forgery, also known as one-click attack or session riding and abbreviated as CSRF or XSRF, is a type of malicious exploit of a website where unauthorized commands are submitted from a user that the web application trusts.
 
 
 ### 73. How does one defend against CSRF?
 
+Websites consist of a combination of client-side and server-side code. The client-side code is HTML and JavaScript that is rendered by and executed in the browser. This allows users to navigate to other URLs on your site, submit HTML forms to the server, and trigger AJAX requests via JavaScript. Your server-side code will intercept the data sent in the HTTP request, and act upon it appropriately.
 
+These server-side actions can also be triggered by forged HTTP requests, unless you explicitly put in protective measures. A CSRF attack occurs when a malicious actor tricks a victim into clicking on a link, or running some code, that triggers a forged request. (This malicious code is typically hosted on a website owned by the attacker, on another domain – hence the “cross-domain” denomination.)
+
+Protecting against CSRF (commonly pronounced “sea-surf”) requires two things: ensuring that GET requests are side-effect free, and ensuring that non-GET requests can only be originated from your client-side code.
 
 ### 74. If you were a site administrator looking for incoming CSRF attacks, what would you look for?
 
-
+Normally, you wouldn't know if the incoming request is a CSRF attack or not because in both cases they would look the same except that the CSRF is sent without the user's consent. BUT if your page contains somekind of a "challenge", like a gotcha for instance, then you would be sure that the user himself/herself made the request "knowingly".
 
 ### 75. What’s the difference between HTTP and HTML?
 
-
+HTML is a Language while HTTP is a Protocol. ... On the contrary, HTTP (Hypertext Transfer Protocol) is a protocol for transferring the hypertext pages from Web Server to Web Browser. For exchanging web pages between Server and Browser, an HTTP session is setup using protocol methods (e.g. GET, POST etc.).
 
 ### 76. How does HTTP handle state?
 
-
+HTTP is called as a stateless protocol because each request is executed independently, without any knowledge of the requests that were executed before it, which means once the transaction ends the connection between the browser and the server is also lost.
 
 ### 77. What exactly is cross-site scripting?
 
-
+Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user.
 
 ### 78. What’s the difference between stored and reflected XSS?
 
-
+Stored XSS, also known as persistent XSS, is the more damaging of the two. It occurs when a malicious script is injected directly into a vulnerable web application. Reflected XSS involves the reflecting of a malicious script off of a web application, onto a user's browser.
 
 ### 79. What are the common defenses against XSS?
 
+Specifying a charset. First of all, ensure that your web page specifies the UTF-8 charset in the headers or in the very beginning of the head element HTML encode all inputs to prevent a UTF-7 attack in Internet Explorer (and older versions of Firefox) despite other efforts to prevent XSS.
+
+HTML escaping. Keep in mind that you need to HTML-escape all user input. This includes replacing < with &lt;, > with &gt;, & with &amp; and " with &quot;. If you will ever use single-quoted HTML attributes, you need to replace ' with &#39; as well. Typical server-side scripting languages such as PHP provide functions to do this, and I encourage you to expand on these by creating standard functions to insert HTML elements rather than inserting them in an ad-hoc manner.
+
+Other types of escaping. You still, however, need to be careful to never insert user input as an unquoted attribute or an attribute interpreted as JavaScript (e.g. onload or onmouseover). Obviously, this also applies to script elements unless the input is properly JavaScript-escaped, which is different from HTML escaping. Another special type of escaping is URL escaping for URL parameters (do it before the HTML escaping to properly include a parameter in a link).
+
+Validating URLs and CSS values. The same goes for URLs of links and images (without validating based on approved prefixes) because of the javascript: URL scheme, and also CSS stylesheet URLs and data within style attributes. (Internet Explorer allows inserting JavaScript expressions as CSS values, and Firefox is similarly problematic with its XBL support.) If you must include a CSS value from an untrusted source, you should safely and strictly validate or CSS escape it.
+
+Not allowing user-provided HTML. Do not allow user-provided HTML if you have the option. That is an easy way to end up with an XSS problem, and so is writing a "parser" for your own markup language based on simple regex substitutions. I would only allow formatted text if the HTML output were generated in an obviously safe manner by a real parser that escapes any text from the input using the standard escaping functions and individually builds the HTML elements. If you have no choice over the matter, use a validator/sanitizer such as AntiSamy.
+
+Preventing DOM-based XSS. Do not include user input in JavaScript-generated HTML code and insert it into the document. Instead, use the proper DOM methods to ensure that it is processed as text, not HTML.
 
 
 ### 80. You are remoted in to a headless system in a remote area. You have no physical access to the hardware and you need to perform an OS installation. What do you do?
 
-
+There are a couple of different ways to do this, but the most like scenario you will run into is this: What you would want to do is setup a network-based installer capable of network-booting via PXE (if you’ve ever seen this during your system boot and wondering what it was for, tada). Environments that have very large numbers of systems more often than not have the capability of pushing out images via the network. This reduces the amount of hands-on time that is required on each system, and keeps the installs more consistent.
 
 ### 81. On a Windows network, why is it easier to break into a local account than an AD account?
 
-
+Windows local accounts have a great deal of baggage tied to them, running back a long long way to keep compatibility for user accounts. If you are a user of passwords longer than 13 characters, you may have seen the message referring to this fact. However, Active Directory accounts have a great deal of security tied onto them, not the least of which is that the system actually doing the authenticating is not the one you are usually sitting at when you are a regular user. Breaking into a Windows system if you have physical access is actually not that difficult at all, as there are quite a few dedicated utilities for just such a purpose, however that is beyond the scope of what we’ll be getting into here.
 
 
 ## [Security architect](##security-architect)
 
 ### 82. Explain data leakage and give examples of some of the root causes.
 
-
+Data leakage is the unauthorized transmission of data from within an organization to an external destination or recipient. The term can be used to describe data that is transferred electronically or physically. Data leakage threats usually occur via the web and email, but can also occur via mobile data storage devices such as optical media, USB keys, and laptops.
 
 ### 83. What are some effective ways to control data leakage?
 
+Applying a Policy of Least Privilege (POLP) to Data Access. It’s hard for someone to accidentally leak data they don’t have access to it. A policy of least privilege restricts each user’s data access to the absolute minimum they need to perform their job function. Using such a policy also helps to minimize the risk of intentional data leaks, too.
+
+Place Restrictions on What Email Domains Employees Can Send Attachments to on Company Systems. Some email clients and applications allow you to organize people into groups or organizations and manage out-of-group communications to some extent. For example, Google Drive can be set to generate a confirmation screen/warning when sharing access to a file with someone outside the employee’s organization/group. Using these kinds of alerts can make it much less likely that data will be accidentally shared.
+
+Establish a BYOD Policy and Enforce It! A bring your own device (BYOD) policy can help your organization define the rules for if and how employees may use personal devices, such as smartphones, laptops, USB drives, and other devices that can be used to copy, store, and transmit data in the workplace. If such devices are not allowed (or have their use restricted) in the workplace, it can reduce the risk of accidental data leakage.
+
+Provide Cybersecurity Awareness Training. Employees need to know not only what the biggest data leak risks are, but what the potential impacts of such leaks can be for the organization. Providing such awareness training helps employees avoid making basic mistakes that lead to data leaks. Additionally, it can help employees identify phishing attempts and other strategies that malicious actors may try to use to steal data.
+
+Installing Basic Cybersecurity Protections on All Network Endpoints. A basic antivirus program or firewall might not stop a determined attacker or a malicious insider, but such basic protections can prevent less sophisticated attempts to steal data from succeeding or at least slow an attacker’s progress. Also, email client antivirus systems can help prevent some data leaks by scanning email attachments for malware.
+
+Making Sure to Clear Sensitive Data from Non-Critical Systems. Does a copy of your company’s most sensitive information, such as customer records and payment card information, need to be on every terminal in the office? No, nor should they be. Cleaning up individual terminals and making sure that all of your most sensitive data is kept on your most isolated (and well-protected) systems is a core part of preventing data leaks. If an attacker gets malware on one random workstation, keeping that workstation clear of sensitive info can lower your risk of a data leak.
+
+Using Defense in Depth Security Strategies. The more layers of protection you can put on your network, the better. Having a layered defense on your network—one that employs firewalls that isolate each asset and restrict peer-to-peer traffic—makes it harder for an attack to access all of your most protected assets at once. This way, even if an attack gets past your outermost perimeter defenses, it will take time and effort for the attacker to access more than a handful of your IT assets.
+
+Install IDS/IPS Systems and Run Penetration Tests. A key part of preventing a data leak is being able to quickly identify an attempt to steal data and contain the breach. The longer it takes to identify an intrusion attempt, the more time an attacker has to breach your defenses and steal data. Intrusion detection systems (IDS) and intrusion prevention systems (IPS) can help with early attack detection and (in the case of IPS) even provide some automated attack prevention. Penetration tests help you test your security measures for potential weaknesses and verify how effective your IDS/IPS solution is at detecting various kinds of intrusion attempts.
 
 
 ### 84. Describe the 80/20 rules of networking.
 
+This rule, often called the Pareto Principle, is defined as such by Investopedia: “[the Pareto Principle] specifies an unequal relationship between inputs and outputs. The principle states that 20 percent of the invested input is responsible for 80 percent of the results obtained. Put another way, 80 percent of consequences stem from 20 percent of the causes.”
 
+In other words, the Pareto Principle is a strategy that attempts to explain how you should delegate your organization’s security resources in order to maximize the security you get. In this case, you are using your assets to protect your network from online threats. However, you might realize that even if you search and search for network vulnerabilities, you won’t find all of them. There are simply too many threats out there to identify. Instead, you use the Pareto Principle to identify where you can do the most good for your organization's network security.
+
+This principle can also work in reverse; only 20 percent of the vulnerabilities on the Internet lead to 80 percent of the data loss. When you think about it, this makes sense. How often do you hear about major data breaches in which multiple vulnerabilities were exploited? Instead, it’s usually just one major hack that led to many compromised accounts.
+
+Yet, the biggest part of effectively using the 80/20 rule is determining what your priorities should be, and which threats are the most dangerous. After all, if everything is a priority, then nothing can get done. This results in all-around subpar security that leaves large threats unchecked.
 
 ### 85. What are web server vulnerabilities and name a few methods to prevent web server attacks?
 
+URL Interpretation Attack. ...
 
+SQL Injection attack. ...
+
+Input Validation attack. ...
+
+Buffer Overflow Attacks. ...
+
+Impersonation attacks. ...
+
+Password-based attacks. ...
+
+Denial of Service Attacks.
 
 ### 86. What are the most damaging types of malwares?
 
+CIH Virus - 1998.
 
+Melissa Macro Virus/Worm - 1999.
+
+Code Red Worm - 2001.
+
+Slammer Worm - 2003.
+
+SoBig.F Worm – 2003.
+
+MyDoom Worm - 2004.
+
+Conficker Worm 2008.
+
+NotPetya - 2017.
 
 ### 87. What’s your preferred method of giving remote employees access to the company network and are there any weaknesses associated to it?
 
+Use strong passwords. ...
+
+Use Two-factor authentication. ...
+
+Update your software. ...
+
+Restrict access using firewalls. ...
+
+Enable Network Level Authentication. ...
+
+Limit users who can log in using Remote Desktop. ...
+
+Set an account lockout policy.
 
 
 ### 88. List a couple of tests that you would do to a network to identify security flaws.
 
+#1) Network Scanning. In this technique, a port scanner is used to identify all the hosts connected to the network. ...
 
+#2) Vulnerability Scanning. ...
+
+#3) Ethical Hacking. ...
+
+#4) Password Cracking. ...
+
+#5) Penetration Testing.
 
 ### 89. What kind of websites and cloud services would you block?
 
@@ -557,19 +658,39 @@ IDs examine specific host-based actions, such as what applications are being use
 
 ### 90. What type of security flaw is there in VPN?
 
+IPSec (Internet Protocol Security):
+
+IPSec furnishes essential authentication, data reliability and encryption services to protect unlawful viewing and data modification. It is limited to sending only IP packets. It uses two security protocols like AH (Authentication Header) and ESP (Encapsulated Security Payload). It applies two forms of modes like transport mode and tunneling mode. Transport mode can merely encrypt the message in data packet while tunneling mode encrypts whole data packet. It is named as a security overlay and is a costly and prolonged activity.
+
+PPTP (Point-to-Point Tunneling Protocol):
+
+It ties in remote client and private server over the internet. It is extensively used protocol and included in window OS. It does not offer encryption and depends on PPP (point-to-point protocol). PPTP is more rapidly and is accessible for Linux and Mac users. Microsoft created it in relationship with other technology companies. Remote users can contact a private network via PPTP with the local ISP dialing. PPTP links with a large network with the help of virtual network for each remote client.
+
+L2TP (Layer 2 Tunneling Protocol):
+
+Microsoft and Cisco have developed L2TP VPN and it relies on PPP (point-to-point protocol) but lacking encryption. It offers data privacy and reliability. L2TP is used as a tunneling protocol to enclose PPP (Point-to-Point Protocol) frames to be sent out over IP, X.25, and Frame Relay or ATM networks. L2TP connections exercise the same verification mechanisms as PPP connections, for instance EAP, CHAP, MS-CHAP, PAP, and SPAP.
+
+SSL VPN:
+
+SSL VPN is a shortened form of Secure Sockets Layer virtual private network that is applied with a usual web browser. It provides remote access to web application, server applications and internal network connections. When data transfer starts between the browser and the SSL VPN, it involves an encryption to protect the data. SSL VPN applies SSL (Secure Sockets Layer) or TLS (Transport Layer Security) technology to encrypt the data. In practice, some SSL VPNs may utilize a self-signed digital certificate that is not usually trusted in the majority web browsers. Therefore, users must use trusted certificate offered by major trusted certificate authorities.
+
+
+https://doc.lagout.org/network/Common VPN Security Flaws.pdf
 
 
 ### 91. What is a DDoS attack?
 
+A distributed denial-of-service (DDoS) attack is a malicious attempt to disrupt the normal traffic of a targeted server, service or network by overwhelming the target or its surrounding infrastructure with a flood of Internet traffic.
 
+DDoS attacks achieve effectiveness by utilizing multiple compromised computer systems as sources of attack traffic. Exploited machines can include computers and other networked resources such as IoT devices.
 
 ### 92. Can you describe the role of security operations in the enterprise?
 
-
+A Security Operation Center (SOC) is a centralized function within an organization employing people, processes, and technology to continuously monitor and improve an organization's security posture while preventing, detecting, analyzing, and responding to cybersecurity incidents.
 
 ### 93. What is layered security architecture? Is it a good approach? Why?
 
-
+The purpose of a layered security approach is to make sure that every individual defense component has a backup to counter any flaws or gaps in other defenses of security. Individual layers in a multi-layered security approach focuses on a specific area where malware could attack.
 
 ### 94. Have you designed security measures that span overlapping information domains? Can you give me a brief overview of the solution?
 
@@ -577,19 +698,29 @@ IDs examine specific host-based actions, such as what applications are being use
 
 ### 95. How do you ensure that a design anticipates human error?
 
-
+Apply design features that visibly convey the possibilities for action. Make the options for functional control visible. Errors in planning and action execution can be minimized if controls are visible so that the possibilities and limits for action are known. Provide appropriate feedback.
 
 ### 96. How do you ensure that a design achieves regulatory compliance?
 
+Identify applicable Acts, Regulations, Directives, Standards. ...
 
+Identify applicable requirements. ...
+
+Monitor for changes. ...
+
+Determine applicability of changes. ...
+
+Collaborate with your team and subject matter experts. ...
+
+Document your compliance reviews.
 
 ### 97. What is capability-based security? Have you incorporated this pattern into your designs? How?
 
-
+Capability-based security refers to the principle of designing user programs such that they directly share capabilities with each other according to the principle of least privilege, and to the operating system infrastructure necessary to make such transactions efficient and secure.
 
 ### 98. Can you give me a few examples of security architecture requirements?
 
-
+Security Architecture is one component of a products/systems overall architecture and is developed to provide guidance during the design of the product/system. ... These controls serve the purpose to maintain the system's quality attributes such as confidentiality, integrity and availability.
 
 ### 99. Who typically owns security architecture requirements and what stakeholders contribute?
 
@@ -597,10 +728,36 @@ IDs examine specific host-based actions, such as what applications are being use
 
 ### 100. What special security challenges does SOA present?
 
+. Legacy application security
+SOA services that wrap legacy applications must take into account the legacy application's security model. Many legacy applications have hardcoded, proprietary security models.
+
+2. Loose coupling of services and applications
+SOA security must not violate SOA design principles such as the Loose coupling of services and applications.
+
+3. Services that operate across organizational boundaries
+In the past, many organizations have heavily relied on network security to secure applications. However, SOA services often operate across organizational boundaries. It is not enough to simply secure the perimeter with network equipment such as firewalls.
+
+4. Dynamic trust relationships
+SOA services are often required to support dynamic trust relationships with partners, customers, and employees.
+
+5. Composite services
+The security model must handle scenarios where multiple services work together as a composite service.
+
+6. Diverse mix of old and new technologies
+Need to manage security and identity across a range of systems and services.
+
+7. Protection of inflight business data
+Data may traverse insecure networks.
+
+8. Need to be compliant with a growing list of standards
+SOA is standards oriented. There are a growing list of security SOA related security standards. There is an expectation that SOA security solutions will rely on established standards.
+
+9. SOA flexibility
+SOA solutions are intended to flexible and customizable. SOA security models should not restrict flexibility.
 
 
 ### 101. What security challenges do unified communications present?
-
+What is Presence Technology? An integral component of unified communication, presence technology makes collaboration more efficient, allowing users to see the availability status of their colleagues before they connect.
 
 
 ### 102. Do you take a different approach to security architecture for a COTS vs a custom solution?
@@ -617,14 +774,25 @@ IDs examine specific host-based actions, such as what applications are being use
 
 ### 105. You see a user logging in as root to perform basic functions. Is this a problem?
 
-
+A Linux admin account (root) has many powers that are not permitted for standard users. That being said, it is not always necessary to log all the way off and log back in as root in order to do these tasks. For example, if you have ever used the ‘run as admin’ command in Windows, then you will know the basic concept behind ‘sudo’ or ‘superuser (root) do’ for whatever it is you want it to do. It’s a very simple and elegant method for reducing the amount of time you need to be logged in as a privileged user. The more time a user spends with enhanced permissions, the more likely it is that something is going to go wrong – whether accidentally or intentionally.
 
 ### 106. What is data protection in transit vs data protection at rest?
 
-
+Data protection at rest aims to secure inactive data stored on any device or network. While data at rest is sometimes considered to be less vulnerable than data in transit, attackers often find data at rest a more valuable target than data in motion
 
 ### 107. You need to reset a password-protected BIOS configuration. What do you do?
 
+Almost all motherboards use a small coin sized CMOS battery to store all BIOS settings along with the password. To reset the password, unplug the PC, open the cabinet and remove the CMOS battery for approx. 15-30 minutes and then put it back. It'll reset all BIOS settings as well as the password and you'll need to re-enter all settings.
+
+If it fails, then try to remove the battery for at least one hour.
+
+By Using Motherboard Jumper:
+
+Almost all motherboards contain a jumper that can clear all CMOS settings along with the BIOS password. The location of this jumper varies depending upon the motherboard brand. You should read your motherboard manual to check its location. If you don't have the manual then look for the jumpers near the CMOS battery. Most of the manufacturer label the jumper as CLR, CLEAR, CLEAR CMOS, etc.
+
+When you find the jumper, look carefully. There will be 3 pins and the jumper will be joining the center pin to either left or right pin. What you need to do, is remove the jumper and join the center pin to the opposite pin. e.g. if the jumper joins center pin to left pin, then remove it and join center pin to right pin. Now wait for a few seconds and then again remove the jumper and join the center pin to left pin.
+
+Make sure to turn the PC off before opening the cabinet and resetting the jumper.
 
 
 ## [Risk management](##risk-management)
@@ -632,96 +800,191 @@ IDs examine specific host-based actions, such as what applications are being use
 
 ### 108. Is there an acceptable level of risk?
 
+A risk is acceptable when: it falls below an arbi- trary defined probability; it falls below some level that is already tolerated; it falls below an arbitrary defined attributable fraction of total disease burden in the community; the cost of reducing the risk would exceed the costs saved; the cost of reducing the risk ...
+
 ### 109. How do you measure risk? Can you give an example of a specific metric that measures information security risk?
+
 
 ### 110. Can you give me an example of risk trade-offs (e.g. risk vs cost)?
 
+
 ### 111. What is incident management?
+
 
 ### 112. What is business continuity management? How does it relate to security?
 
+
 ### 113. What is the primary reason most companies haven’t fixed their vulnerabilities?
+
 
 ### 114. What’s the goal of information security within an organization?
 
+
 ### 115. What’s the difference between a threat, vulnerability, and a risk?
+
 
 ### 116. If you were to start a job as head engineer or CSO at a Fortune 500 company due to the previous guy being fired for incompetence, what would your priorities be? [Imagine you start on day one with no knowledge of the environment]
 
+
 ### 117. As a corporate information security professional, what’s more important to focus on: threats or vulnerabilities?
+
 
 ### 118. If I’m on my laptop, here inside my company, and I have just plugged in my network cable. How many packets must leave my NIC in order to complete a traceroute to twitter.com?
 
+
 ### 119. How would you build the ultimate botnet?
+
 
 ### 120. What are the primary design flaws in HTTP, and how would you improve it?
 
+
 ### 121. If you could re-design TCP, what would you fix?
+
 
 ### 122. What is the one feature you would add to DNS to improve it the most?
 
+
 ### 123. What is likely to be the primary protocol used for the Internet of Things in 10 years?
+
 
 ### 124. If you had to get rid of a layer of the OSI model, which would it be?
 
+
 ### 125. What is residual risk?
+
 
 ### 126. What is the difference between a vulnerability and an exploit?
 
 
+
 ## [Security audits and incident response](##security-audits-and-incident-response)
 
-127. What is an IT security audit?
+### 127. What is an IT security audit?
 
-128. What is an RFC?
 
-129. What type of systems should be audited?
 
-130. Have you worked in a virtualized environment?
+### 128. What is an RFC?
 
-131. What is the most difficult part of auditing for you?
 
-132. Describe the most difficult auditing procedure you’ve implemented.
 
-133. What is change management?
+### 129. What type of systems should be audited?
 
-134. What types of RFC or change management software have you used?
 
-135. What do you do if a rollout goes wrong?
 
-136. How do you manage system major incidents?
 
-137. How do you ask developers to document changes?
+### 130. Have you worked in a virtualized environment?
 
-138. How do you compare files that might have changed since the last time you looked at them?
 
-139. Name a few types of security breaches.
 
-140. What is a common method of disrupting enterprise systems?
 
-141. What are some security software tools you can use to monitor the network?
+### 131. What is the most difficult part of auditing for you?
 
-142. What should you do after you suspect a network has been hacked?
 
-143. How can you encrypt email to secure transmissions about the company?
 
-144. What document describes steps to bring up a network that’s had a major outage?
 
-145. How can you ensure backups are secure?
+### 132. Describe the most difficult auditing procedure you’ve implemented.
 
-146. What is one way to do a cross-script hack?
 
-147. How can you avoid cross script hacks?
 
-148. How do you test information security?
 
-149. What is the difference between black box and white box penetration testing?
+### 133. What is change management?
 
-150. What is a vulnerability scan?
 
-151. In pen testing what’s better, a red team or a blue team?
 
-152. Why would you bring in an outside contractor to perform a penetration test?
+### 134. What types of RFC or change management software have you used?
+
+
+
+
+### 135. What do you do if a rollout goes wrong?
+
+
+
+
+### 136. How do you manage system major incidents?
+
+
+
+
+### 137. How do you ask developers to document changes?
+
+
+
+
+### 138. How do you compare files that might have changed since the last time you looked at them?
+
+
+
+
+### 139. Name a few types of security breaches.
+
+
+
+
+### 140. What is a common method of disrupting enterprise systems?
+
+
+
+
+### 141. What are some security software tools you can use to monitor the network?
+
+
+
+
+### 142. What should you do after you suspect a network has been hacked?
+
+
+
+
+### 143. How can you encrypt email to secure transmissions about the company?
+
+
+
+
+### 144. What document describes steps to bring up a network that’s had a major outage?
+
+
+
+
+### 145. How can you ensure backups are secure?
+
+
+
+
+### 146. What is one way to do a cross-script hack?
+
+
+
+
+### 147. How can you avoid cross script hacks?
+
+
+
+
+### 148. How do you test information security?
+
+
+
+
+### 149. What is the difference between black box and white box penetration testing?
+
+
+
+
+### 150. What is a vulnerability scan?
+
+
+
+
+### 151. In pen testing what’s better, a red team or a blue team?
+
+
+
+
+### 152. Why would you bring in an outside contractor to perform a penetration test?
+
+
+
 
 ## [Cryptography](##cryptography)
 
