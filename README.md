@@ -281,15 +281,15 @@ Anonymous is a decentralized international activist/hacktivist collective/moveme
 
 Remember that a ping test uses ICMP, so there are no real ports being used. ICMP basically roofs, or sits on top of, the IP address. Therefore it is not a layer four protocol.
 
-45. Do you prefer filtered ports or closed ports on your firewall?
+### 45. Do you prefer filtered ports or closed ports on your firewall?
 
 A closed port indicates that no application or service is not listening for connections on that port. A closed port can open up at any time if an application or service is started. A filter port indicates that a firewall, filter, or other network issue is blocking the port.
 
-46. How exactly does traceroute/tracert work at the protocol level?
+### 46. How exactly does traceroute/tracert work at the protocol level?
 
 Traceroute (tracert) works by sending a packet to an open UDP port on a destination machine. The router then discards the packet and sends off an ICMP notification packet to the original host with the message that the TTL expired from the router. Traceroute transmits packets with small TTL (Time To Live) values.
 
-47. What are Linux’s strengths and weaknesses vs. Windows?
+### 47. What are Linux’s strengths and weaknesses vs. Windows?
 
 The loading time of Windows 10 is much less than that of Windows 7. Stability and performance has been greatly improved in Windows 10. Redesigned UI mixes the advantages of Windows 7 & Windows 8 which helps users of Windows 7 or earlier get comfortable to use it. It is safer to use the latest Windows operating system
 
@@ -313,7 +313,7 @@ THERE IS A LEARNING CURVE FOR PEOPLE WHO ARE NEW TO LINUX.
 
 
 
-48. What is a firewall? And provide an example of how a firewall can be bypassed by an outsider to access the corporate network.
+### 48. What is a firewall? And provide an example of how a firewall can be bypassed by an outsider to access the corporate network.
 
 A firewall is a network security system (hardware, software, or both) which is used to monitor all incoming and outgoing network traffic. Based on a defined set of advanced security rules, the firewall decides to either allow or block specific traffic.
 
@@ -325,30 +325,30 @@ Use Mobile Data as a Stopgap. ...
 
 
 
-49. Besides firewalls, what other devices are used to enforce network boundaries?
+### 49. Besides firewalls, what other devices are used to enforce network boundaries?
 
 Beyond perimeter security devices and devices that provide internal security, other devices provide myriad additional services, such as acting as load balancers, proxies, and access points that improve network functionality.
 
 
 
-50. What is the role of network boundaries in information security?
+### 50. What is the role of network boundaries in information security?
 
 Boundary protection is the "monitoring and control of communications at the external boundary of an information system to prevent and detect malicious and other unauthorized communication." Protection is achieved through the use of gateways, routers, firewalls, guards, and encrypted tunnels
 
 
 
-51. What does an intrusion detection system do? How does it do it?
+### 51. What does an intrusion detection system do? How does it do it?
 
 Network intrusion detection systems operate at the network level and monitor traffic from all devices going in and out of the network. NIDS performs analysis on the traffic looking for patterns and abnormal behaviors upon which a warning is sent.
 
 
 
-52. What is a honeypot? What type of attack does it defend against?
+### 52. What is a honeypot? What type of attack does it defend against?
 
  honeypot is a computer or computer system intended to mimic likely targets of cyberattacks. It can be used to detect attacks or deflect them from a legitimate target. ... You may not have heard of them before, but honeypots have been around for decades. The principle behind them is simple: Don't go looking for attackers.
 
 
-53. What technologies and approaches are used to secure information and services deployed on cloud computing infrastructure?
+### 53. What technologies and approaches are used to secure information and services deployed on cloud computing infrastructure?
 
 
 Secure cloud accounts and create groups. Ensure that the root account is secure. ...
@@ -364,7 +364,7 @@ Replace passwords with keys. ...
 Turn on auditing and system monitoring.
 
 
-54. What information security challenges are faced in a cloud computing environment?
+### 54. What information security challenges are faced in a cloud computing environment?
 
 
 Data Breaches. Consequences of a data breach may include: ...
@@ -384,47 +384,47 @@ Insecure Interfaces and APIs. ...
 Weak Control Plane.
 
 
-55. Can you give me an overview of IP multicast?
+### 55. Can you give me an overview of IP multicast?
 
 IP multicast is a method of sending Internet Protocol (IP) datagrams to a group of interested receivers in a single transmission. It is the IP-specific form of multicast and is used for streaming media and other network applications. It uses specially reserved multicast address blocks in IPv4 and IPv6.
 
 
-56. How many bits do you need for a subnet size?
+### 56. How many bits do you need for a subnet size?
 
 A subnet mask is the representation of the network portion of an address. It is also made up of 32 bits with all the bits that represent the network portion being marked as 1s and the other parts marked as 0s.
 
 https://www.ittsystems.com/introduction-to-subnetting/#:~:text=A subnet mask is the,Class A%3A 255.0.
 
 
-57. What is packet filtering?
+### 57. What is packet filtering?
 
 Packet filtering is one technique, among many, for implementing security firewalls.”i Packet filtering is both a tool and a technique that is a basic building block of network security. ... Windows NT and Windows 2000 support packet filtering. Virtually all commercial firewalls support packet filtering.
 
 
 
 
-58. Can you explain the difference between a packet filtering firewall and an application layer firewall?
+### 58. Can you explain the difference between a packet filtering firewall and an application layer firewall?
 
 The application layer firewall takes into consideration the nature of the applications being run (the type, timing of the network connection requests, the type and nature of the traffic generated) whereas the packet filtering firewall simply looks at the packets as they are transferred.
 
 
-59. What are the layers of the OSI model?
+### 59. What are the layers of the OSI model?
 
 In the OSI reference model, the communications between a computing system are split into seven different abstraction layers: Physical, Data Link, Network, Transport, Session, Presentation, and Application.
 
 
 
-60. How would you login to Active Directory from a Linux or Mac box?
+### 60. How would you login to Active Directory from a Linux or Mac box?
 
 There are several ways that organizations can connect their Linux devices to Active Directory. The easiest is by using LDAP via the PAM module. Organizations can also use Kerberos under this model.
 
 
-61. What is an easy way to configure a network to allow only a single computer to login on a particular jack?
+### 61. What is an easy way to configure a network to allow only a single computer to login on a particular jack?
 
 Sticky ports are one of the network admin’s best friends and worst headaches. They allow you to set up your network so that each port on a switch only permits one (or a number that you specify) computer to connect on that port by locking it to a particular MAC address. If any other computer plugs into that port, the port shuts down and you receive a call that they can’t connect anymore. If you were the one that originally ran all the network connections then this isn’t a big issue, and likewise if it is a predictable pattern then it also isn’t an issue. However if you’re working in a hand-me-down network where chaos is the norm then you might end up spending a while toning out exactly what they are connecting to.
 
 
-62. What are the three ways to authenticate a person?
+### 62. What are the three ways to authenticate a person?
 
 Something you have e.g. Credit Card, ID Card, etc.
 
@@ -435,121 +435,202 @@ Something you are e.g. Static Biometrics, Fingerprints, etc.
 Something you do e.g. Dynamic Biometrics, Voice, etc.
 
 
-63. You find out that there is an active problem on your network. You can fix it, but it is out of your jurisdiction. What do you do?
+### 63. You find out that there is an active problem on your network. You can fix it, but it is out of your jurisdiction. What do you do?
 
 
 While the first impulse may be to immediately fix the problem, you need to go through the proper channels. Things may be as they are for a reason. Use e-mail to notify the person in charge of that department, expressing your concerns, and asking for clarification. Make sure your boss is CC’ed into the email chain, and make sure that you save a copy for yourself, in case you need to refer to it later.
 
 
-64. How would you compromise an “office workstation” at a hotel?
+### 64. How would you compromise an “office workstation” at a hotel?
 
 Considering how infected these typically are, I wouldn’t touch one with a 10ft pole. That being said, a USB keylogger is easy to fit into the back of these systems without much notice while an autorun program would be able to run quickly and quietly leaving behind software to do the dirty work. In essence, it’s open season on exploits in this type of environment.
 
 
 
 
-65. What is worse in firewall detection, a false negative or a false positive? And why?
+### 65. What is worse in firewall detection, a false negative or a false positive? And why?
 
 A false positive is a false alarm. A false negative state is the most serious and dangerous state. This is when the IDS identifies an activity as acceptable when the activity is actually an attack. That is, a false negative is when the IDS fails to catch an attack.
 
 
-66. How would you judge if a remote server is running IIS or Apache?
+### 66. How would you judge if a remote server is running IIS or Apache?
 
 https://news.netcraft.com
 
 
-67. What is the difference between an HIDS and a NIDS?
+### 67. What is the difference between an HIDS and a NIDS?
 
 IDs examine specific host-based actions, such as what applications are being used, what files are being accessed and what information resides in the kernel logs. NIDs analyze the flow of information between computers, i.e., network traffic. They essentially "sniff" the network for suspicious behavior.
 
 
 ## [Application security](##application-security)
 
-68. Describe the last program or script that you wrote. What problem did it solve?
+### 68. Describe the last program or script that you wrote. What problem did it solve?
 
-69. Can you briefly discuss the role of information security in each phase of the software development lifecycle?
 
-70. How would you implement a secure login field on a high traffic website where performance is a consideration?
+### 69. Can you briefly discuss the role of information security in each phase of the software development lifecycle?
 
-71. What are the various ways to handle account brute forcing?
 
-72. What is cross-site request forgery?
 
-73. How does one defend against CSRF?
+### 70. How would you implement a secure login field on a high traffic website where performance is a consideration?
 
-74. If you were a site administrator looking for incoming CSRF attacks, what would you look for?
 
-75. What’s the difference between HTTP and HTML?
 
-76. How does HTTP handle state?
+### 71. What are the various ways to handle account brute forcing?
 
-77. What exactly is cross-site scripting?
 
-78. What’s the difference between stored and reflected XSS?
 
-79. What are the common defenses against XSS?
+### 72. What is cross-site request forgery?
 
-80. You are remoted in to a headless system in a remote area. You have no physical access to the hardware and you need to perform an OS installation. What do you do?
 
-81. On a Windows network, why is it easier to break into a local account than an AD account?
+
+### 73. How does one defend against CSRF?
+
+
+
+### 74. If you were a site administrator looking for incoming CSRF attacks, what would you look for?
+
+
+
+### 75. What’s the difference between HTTP and HTML?
+
+
+
+### 76. How does HTTP handle state?
+
+
+
+### 77. What exactly is cross-site scripting?
+
+
+
+### 78. What’s the difference between stored and reflected XSS?
+
+
+
+### 79. What are the common defenses against XSS?
+
+
+
+### 80. You are remoted in to a headless system in a remote area. You have no physical access to the hardware and you need to perform an OS installation. What do you do?
+
+
+
+### 81. On a Windows network, why is it easier to break into a local account than an AD account?
+
+
+
 
 ## [Security architect](##security-architect)
 
-82. Explain data leakage and give examples of some of the root causes.
+### 82. Explain data leakage and give examples of some of the root causes.
 
-83. What are some effective ways to control data leakage?
 
-84. Describe the 80/20 rules of networking.
 
-85. What are web server vulnerabilities and name a few methods to prevent web server attacks?
+### 83. What are some effective ways to control data leakage?
 
-86. What are the most damaging types of malwares?
 
-87. What’s your preferred method of giving remote employees access to the company network and are there any weaknesses associated to it?
 
-88. List a couple of tests that you would do to a network to identify security flaws.
+### 84. Describe the 80/20 rules of networking.
 
-89. What kind of websites and cloud services would you block?
 
-90. What type of security flaw is there in VPN?
 
-91. What is a DDoS attack?
+### 85. What are web server vulnerabilities and name a few methods to prevent web server attacks?
 
-92. Can you describe the role of security operations in the enterprise?
 
-93. What is layered security architecture? Is it a good approach? Why?
 
-94. Have you designed security measures that span overlapping information domains? Can you give me a brief overview of the solution?
+### 86. What are the most damaging types of malwares?
 
-95. How do you ensure that a design anticipates human error?
 
-96. How do you ensure that a design achieves regulatory compliance?
 
-97. What is capability-based security? Have you incorporated this pattern into your designs? How?
+### 87. What’s your preferred method of giving remote employees access to the company network and are there any weaknesses associated to it?
 
-98. Can you give me a few examples of security architecture requirements?
 
-99. Who typically owns security architecture requirements and what stakeholders contribute?
 
-100. What special security challenges does SOA present?
+### 88. List a couple of tests that you would do to a network to identify security flaws.
 
-101. What security challenges do unified communications present?
 
-102. Do you take a different approach to security architecture for a COTS vs a custom solution?
 
-103. Have you architected a security solution that involved SaaS components? What challenges did you face?
+### 89. What kind of websites and cloud services would you block?
 
-104. Have you worked on a project in which stakeholders choose to accept identified security risks that worried you? How did you handle the situation?
 
-105. You see a user logging in as root to perform basic functions. Is this a problem?
 
-106. What is data protection in transit vs data protection at rest?
+### 90. What type of security flaw is there in VPN?
 
-107. You need to reset a password-protected BIOS configuration. What do you do?
+
+
+### 91. What is a DDoS attack?
+
+
+
+### 92. Can you describe the role of security operations in the enterprise?
+
+
+
+### 93. What is layered security architecture? Is it a good approach? Why?
+
+
+
+### 94. Have you designed security measures that span overlapping information domains? Can you give me a brief overview of the solution?
+
+
+
+### 95. How do you ensure that a design anticipates human error?
+
+
+
+### 96. How do you ensure that a design achieves regulatory compliance?
+
+
+
+### 97. What is capability-based security? Have you incorporated this pattern into your designs? How?
+
+
+
+### 98. Can you give me a few examples of security architecture requirements?
+
+
+
+### 99. Who typically owns security architecture requirements and what stakeholders contribute?
+
+
+
+### 100. What special security challenges does SOA present?
+
+
+
+### 101. What security challenges do unified communications present?
+
+
+
+### 102. Do you take a different approach to security architecture for a COTS vs a custom solution?
+
+
+
+### 103. Have you architected a security solution that involved SaaS components? What challenges did you face?
+
+
+
+### 104. Have you worked on a project in which stakeholders choose to accept identified security risks that worried you? How did you handle the situation?
+
+
+
+### 105. You see a user logging in as root to perform basic functions. Is this a problem?
+
+
+
+### 106. What is data protection in transit vs data protection at rest?
+
+
+
+### 107. You need to reset a password-protected BIOS configuration. What do you do?
+
+
 
 ## [Risk management](##risk-management)
 
-108. Is there an acceptable level of risk?
+
+### 108. Is there an acceptable level of risk?
 
 109. How do you measure risk? Can you give an example of a specific metric that measures information security risk?
 
@@ -586,6 +667,7 @@ IDs examine specific host-based actions, such as what applications are being use
 125. What is residual risk?
 
 126. What is the difference between a vulnerability and an exploit?
+
 
 ## [Security audits and incident response](##security-audits-and-incident-response)
 
