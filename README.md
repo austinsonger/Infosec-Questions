@@ -1,7 +1,12 @@
 # Infosec-Questions
 
 - [General](#general)
-
+- [Network Security](#network-security)
+- [Application security](#application-security)
+- [Security architect](#security-architect)
+- [Risk management](#risk-management)
+- [Security audits and incident response](#security-audits-and-incident-response)
+- [Cryptography](#cryptography)
 
 
 
