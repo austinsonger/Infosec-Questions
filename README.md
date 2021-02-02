@@ -1011,6 +1011,78 @@ What is the difference between a vulnerability and an exploit? A weakness of a s
 
 
 
+### 1. MAN-IN-THE-MIDDLE ATTACK
+
+A man-in-the-middle (MitM) attack is a difficult security breach to recognize because it involves a bad actor taking advantage of a trusted “man in the middle” to infiltrate your system. Most often, the hacker will start by compromising a customer’s system to launch an attack on your server. Hackers can achieve this by either:
+
+- Sneaking through a connection you’ve already established with your customer
+- Stealing a customer’s IP address and disguising themselves as the customer to lure you into providing valuable information or funds
+
+### 2. DENIAL-OF-SERVICE AND DISTRIBUTED-DENIAL-OF-SERVICE ATTACKS
+
+
+
+
+
+### 3. PHISHING AND SPEAR PHISHING
+
+If you’ve ever received an email claiming to be from a trusted company you have an account with—for example, Paypal—but something about the email seemed unusual, then you have probably encountered a phishing attempt. Phishing involves the hacker sending an email designed to look like it has been sent from a trusted company or website. The email will often sound forceful, odd, or feature spelling and grammatical errors. [Phishing emails](https://www.solarwindsmsp.com/products/mail/use-cases/spear-phishing-prevention?promo=blog) will attempt to entice the recipient into performing an action, such as clicking a link or downloading an attachment. The link or attachment usually requests sensitive data or contains malware that compromises the system.
+
+A phishing email is typically sent out to a large number of recipients without a specific target, in the hopes that casting a wide net will result in at least one recipient taking the bait. Spear phishing, on the other hand, has a specific target. With spear phishing, the hacker may have conducted research on the recipient. For example, they might look through an individual’s social media profiles to determine key details like what company the victim works for. The hacker could then use this information to pretend to be the recipient’s employer, giving them a better chance of successfully persuading the victim to share valuable information or even transfer funds. 
+
+### 4. PASSWORD ATTACK 
+
+According to [Have I Been Pwned](https://haveibeenpwned.com/), a source that allows you to check if your account has been compromised in a data breach, these are the most commonly used passwords:
+
+1. 123456
+2. 123456789
+3. qwerty
+4. password
+5. 111111
+6. 12345678
+7. abc123
+8. password1
+9. 1234567
+10. 12345
+
+On top of being popular, these passwords are also extremely easy for hackers to guess. Sadly, many people and businesses make use of the same passwords for multiple accounts. This means that if the hacker guesses just one of the passwords, they can try that password on other services and get a match. For example, they may get an email and password combination, then try them on bank accounts, looking for a hit. Hackers can use password attacks to compromise accounts, steal your identity, make purchases in your name, and gain access to your bank details. 
+
+Hackers can often guess passwords by using social engineering to trick people or by brute force. To reduce the risk of hackers guessing your passwords, make sure you have a unique password for each of your accounts—and that each of these passwords are complex. They should include a combination of digits, symbols, uppercase letters, and lowercase letters. If possible, it’s best to avoid words found in the dictionary. [Password management tools](https://www.passportalmsp.com/password-management?promo=blog) can generate strong passwords for you and store them in an encrypted vault that can be accessed with a master password and multi-factor authentication so you don’t have to remember them. 
+
+### 5. EAVESDROP ATTACK
+
+An eavesdrop attack is an attack made by intercepting network traffic. Eavesdropping attacks entail the hacker using your behavior on your network to track things like credit card numbers and other potentially valuable, sensitive information. There are two different types of eavesdrop attacks—active and passive. In an active attack, the hacker will disguise themselves as a trusted server and send queries to the transmitters. A passive attack, on the other hand, listens to information through the transmission network. 
+
+### 6. CROSS-SITE SCRIPTING ATTACK
+
+A cross-site (XXS) attack attempts to inject malicious scripts into websites or web apps. Launching a successful XXS attack is a reasonably complicated process, which requires the victim to visit a website and have the network translate the website with the attacker’s HTML. This means that when the website reaches the victim’s browser, the website automatically executes the malicious script. The aim of this attack is to capture screenshots, log keystrokes, collect network information, steal cookies, and even remotely access the victim’s device. This can ultimately be one method of launching a larger attack leading to a full-on data breach.
+
+### 7. MALWARE ATTACK 
+
+A [malware](https://www.solarwindsmsp.com/blog/how-to-remove-malware) attack is an umbrella term that refers to a range of different types of security breaches. This includes the following:
+
+- Polymorphic viruses, which change their signatures frequently to evade signature-based antivirus (AV)
+- Systems or boot-record infectors, which are viruses that attach themselves to your hard disk 
+- Trojan or trojan horses, which are programs that appear as a typical file like an MP3 download but that hide malicious behavior
+- File infectors, which are viruses that attach themselves to code on files
+- Macro viruses, which are viruses that target and infect major applications
+- Stealth viruses, which take control over your system and then use obfuscation methods like changing the filename to avoid detection
+- Worms, which are viruses that propagate across a network
+- Logic bombs, which are malicious software programs that are triggered by a specific condition, such as a date and time
+- Ransomware, which are malware viruses that block access to the victim’s sensitive data until the victim pays a specific amount of money
+
+Both individuals and businesses can fall victim to these types of attacks, which can have drastic financial, legal, and operational consequences. 
+
+
+
+
+
+
+
+
+
+
+
 
 ### 140. What is a common method of disrupting enterprise systems?
 
