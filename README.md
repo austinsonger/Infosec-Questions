@@ -1155,78 +1155,162 @@ Both individuals and businesses can fall victim to these types of attacks, which
 ## [Cryptography](##cryptography)
 
 ### 153. What is secret-key cryptography?
+Secret-key cryptography is also called symmetric cryptography because the same key is used to both encrypt and decrypt the data. 
+
+- Well-known secret-key cryptographic algorithms include Advanced Encryption Standard (AES), Triple Data Encryption Standard (3DES), and Rivest Cipher 4 (RC4).
 
 ### 154. What is public-key cryptography?
+Public-key cryptography is also called asymmetric cryptography because different keys are used to encrypt and decrypt the data.
+
+- A well-known public key cryptographic algorithm often used with TLS is the Rivest Shamir Adleman (RSA) algorithm. Another public key algorithm used with TLS that is designed specifically for secret key exchange is the Diffie-Hellman (DH) algorithm. Public-key cryptography requires extensive computations, making it very slow. It is therefore typically used only for encrypting small pieces of data, such as secret keys, rather than for the bulk of encrypted data communications.
+
 
 ### 155. What is a session key?
+A session key is any encryption key used to symmetrically encrypt one communication session only. 
+
+- In other words, it's a temporary key that is only used once, during one stretch of time, for encrypting and decrypting data;  future conversations between the two parties would be encrypted with different session keys. 
+- A session key is like a password that someone resets every time they log in.
+
 
 ### 156. What is RSA?
+RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem that is widely used for secure data transmission. It is also one of the oldest. The acronym RSA comes from the surnames of Ron Rivest, Adi Shamir, and Leonard Adleman, who publicly described the algorithm in 1977.
+
+- In a public-key cryptosystem, the encryption key is public and distinct from the decryption key, which is kept secret (private). An RSA user creates and publishes a public key based on two large prime numbers, along with an auxiliary value. The prime numbers are kept secret. Messages can be encrypted by anyone, via the public key, but can only be decoded by someone who knows the prime numbers
 
 ### 157. How fast is RSA?
+RSA is a relatively slow algorithm. Because of this, it is not commonly used to directly encrypt user data. More often, RSA is used to transmit shared keys for symmetric key cryptography, which are then used for bulk encryption-decryption.
 
 ### 158. What would it take to break RSA?
+The security of RSA relies on the practical difficulty of factoring the product of two large prime numbers, the "factoring problem". Breaking RSA encryption is known as the RSA problem. Whether it is as difficult as the factoring problem is an open question.[3] There are no published methods to defeat the system if a large enough key is used.
+
+- In cryptography, the RSA problem summarizes the task of performing an RSA private-key operation given only the public key. The RSA algorithm raises a message to an exponent, modulo a composite number N whose factors are not known. Thus, the task can be neatly described as finding the eth roots of an arbitrary number, modulo N. For large RSA key sizes (in excess of 1024 bits), no efficient method for solving this problem is known; if an efficient method is ever developed, it would threaten the current or eventual security of RSA-based cryptosystems—both for public-key encryption and digital signatures.
 
 ### 159. Are strong primes necessary for RSA?
-
 ### 160. How large a module (key) should be used in RSA?
-
 ### 161. How large should the primes be?
-
 ### 162. How is RSA used for authentication in practice? What are RSA digital signatures?
-
 ### 163. What are the alternatives to RSA?
-
 ### 164. Is RSA currently in use today?
 
+
 ### 165. What are DSS and DSA?
+The Digital Signature Standard (DSS) is a Federal Information Processing Standard specifying a suite of algorithms that can be used to generate digital signatures established by the U.S. National Institute of Standards and Technology (NIST) in 1994.
+
+The Digital Signature Algorithm (DSA) is a Federal Information Processing Standard for digital signatures, based on the mathematical concept of modular exponentiation and the discrete logarithm problem. DSA is a variant of the Schnorr and ElGamal signature schemes.
+- The DSA algorithm works in the framework of public-key cryptosystems and is based on the algebraic properties of modular exponentiation, together with the discrete logarithm problem, which is considered to be computationally intractable. The algorithm uses a key pair consisting of a public key and a private key. The private key is used to generate a digital signature for a message, and such a signature can be verified by using the signer's corresponding public key. The digital signature provides message authentication (the receiver can verify the origin of the message), integrity (the receiver can verify that the message has not been modified since it was signed) and non-repudiation (the sender cannot falsely claim that they have not signed the message).
 
 ### 166. What is difference between DSA and RSA?
 
+Although DSA and RSA have practically the same cryptographic strengths, each have their own advantages when it comes to performance. DSA is faster at decrypting and signing, while RSA is faster at encrypting and verifying.
+
 ### 167. Is DSA secure?
+A 1024-bit DSA key is not a critical risk. As far as we know, DSA appears to be at least as strong as RSA with the same key size, and in practice a bit stronger. DSA relies on discrete logarithm and the current DL-break record is for 530 bits, while the current record for factorization (RSA) is 768 bits. Best known algorithms for factorization and DL have a lot of similarities, but the final step (where a lot of fast RAM is needed) appears to be more expensive with DL than with factorization. Thus, right now, a 1024-bit DSA key is not a true security risk. Especially since, for signatures, we have less to worry about future break than for encryption; and DSA is signature-only.
+
 
 ### 168. What are special signature schemes?
+Since the time Diffie and Hellman introduced the concept of digital signatures (see Question 3), many signature schemes have been proposed in cryptographic literature. These schemes can be categorized as either conventional digital signature schemes (e.g., RSA, DSA) or special signature schemes depending on their security features.
+
+In a conventional signature scheme (the original model defined by Diffie and Hellman), we generally assume the following situation:
+
+The signer knows the contents of the message that he has signed.
+Anyone who knows the public key of the signer can verify the correctness of the signature at any time without any consent or input from the signer. (Digital signature schemes with this property are called self-authenticating signature schemes.)
+The security of the signature schemes (i.e., hard to forge, non-repudiation, see Question 3) is based on certain complexity-theoretic assumptions.
+In some situations, it may be better to relax some of these assumptions, and/or add certain special security features. For example, when Alice asks Bob to sign a certain message, she may not want him to know the contents of the message. In the past decade, a variety of special signature schemes have been developed to fit security needs in different applications.
+
 
 ### 169. What is a blind signature scheme?
+Blind signature [27] is a kind of digital signature in which the message is blinded before it is signed. Therefore, the signer will not learn the message content. Then the signed message will be unblinded. At this moment, it is similar to a normal digital signature, and it can be publicly checked against the original message. Blind signature can be implemented using a number of public-key encryption schemes.
 
 ### 170. What is a designated confirmer signatures?
+Designated confirmer signatures (or sometimes simply “confirmer signatures”) are digital signatures that can be verified only by some help of a semi-trusted designated confirmer. 
 
 ### 171. What is a fail-stop signature scheme?
+Fail-stop signature (FSS) schemes protect a signer against a forger with unlimited computational power by enabling the signer to provide a proof of forgery, if it occurs. A decade after its invention, there have been several FSS schemes proposed in the literature.
+
 
 ### 172. What is a group signature?
+A group signature scheme is a method for allowing a member of a group to anonymously sign a message on behalf of the group. 
+
 
 ### 173. What is blowfish?
+Blowfish is a symmetric-key block cipher, designed in 1993 by Bruce Schneier and included in many cipher suites and encryption products. Blowfish provides a good encryption rate in software and no effective cryptanalysis of it has been found to date. However, the Advanced Encryption Standard (AES) now receives more attention, and Schneier recommends Twofish for modern applications.  
+
+Schneier designed Blowfish as a general-purpose algorithm, intended as an alternative to the aging DES and free of the problems and constraints associated with other algorithms. At the time Blowfish was released, many other designs were proprietary, encumbered by patents or were commercial or government secrets. Schneier has stated that, "Blowfish is unpatented, and will remain so in all countries. The algorithm is hereby placed in the public domain, and can be freely used by anyone."
+
 
 ### 174. What is SAFER?
+In cryptography, SAFER (Secure And Fast Encryption Routine) is the name of a family of block ciphers designed primarily by James Massey (one of the designers of IDEA) on behalf of Cylink Corporation. The early SAFER K and SAFER SK designs share the same encryption function, but differ in the number of rounds and the key schedule. 
+
+
 
 ### 175. What is FEAL?
+In cryptography, FEAL (the Fast data Encipherment ALgorithm) is a block cipher proposed as an alternative to the Data Encryption Standard (DES), and designed to be much faster in software. The Feistel based algorithm was first published in 1987 by Akihiro Shimizu and Shoji Miyaguchi from NTT. The cipher is susceptible to various forms of cryptanalysis, and has acted as a catalyst in the discovery of differential and linear cryptanalysis.
 
 ### 176. What is Shipjack?
+Shipjack  is an encryption algorithm for the transmission of information (voice data in particular), developed by the National Security Agency (NSA) in the USA. It uses the Diffie-Hellman key exchange algorithm for the distribution of the cryptographic session keys between peers.
 
-### 177. What is stream cipher?
+- The Skipjack algorithm was classified as an NSA Type 2 encryption product. It was intended for voice data networks (telephone) and was initially developed for the NSA's ill-fated Clipper Chip project, shown in the image on the right [1]. In 1994, (then) AT&T researcher Matt Blaze, found a serious weakness in the Escrowed Encryption System (EES), which allowed a malicious party to bypass the clipper chip's escrow capability
+
+
+### 177. What is stream cipher? Name a most widely used stream cipher.
+
+A stream cipher is a symmetric key cipher where plaintext digits are combined with a pseudorandom cipher digit stream (keystream). In a stream cipher, each plaintext digit is encrypted one at a time with the corresponding digit of the keystream, to give a digit of the ciphertext stream. Since encryption of each digit is dependent on the current state of the cipher, it is also known as state cipher. In practice, a digit is typically a bit and the combining operation is an exclusive-or (XOR).
+
+- RC4 - RC4, which stands for Rivest Cipher 4, is the most widely used of all stream ciphers, particularly in software. It's also known as ARCFOUR or ARC4.
+
 
 ### 178. What is the advantage of public-key cryptography over secret-key cryptography?
 
+
 ### 179. What is the advantage of secret-key cryptography over public-key cryptography?
 
+
 ### 180. What is Message Authentication Code (MAC)?
+In cryptography, a message authentication code (MAC), sometimes known as a tag, is a short piece of information used to authenticate a message—in other words, to confirm that the message came from the stated sender (its authenticity) and has not been changed. The MAC value protects a message's data integrity, as well as its authenticity, by allowing verifiers (who also possess the secret key) to detect any changes to the message content.
+
 
 ### 181. What is a block cipher?
+In cryptography, a block cipher is a deterministic algorithm operating on fixed-length groups of bits, called blocks. It uses an unvarying transformation, that is, it uses a symmetric key. They are specified elementary components in the design of many cryptographic protocols and are widely used to implement the encryption of large amounts of data, including data exchange protocols.  
+
+Even a secure block cipher is suitable for the encryption of only a single block of data at a time, using a fixed key. A multitude of modes of operation have been designed to allow their repeated use in a secure way to achieve the security goals of confidentiality and authenticity. However, block ciphers may also feature as building blocks in other cryptographic protocols, such as universal hash functions and pseudorandom number generators.
+
+
 
 ### 182. What are different block cipher modes of operation?
+In cryptography, a block cipher mode of operation is an algorithm that uses a block cipher to provide information security such as confidentiality or authenticity.[1] A block cipher by itself is only suitable for the secure cryptographic transformation (encryption or decryption) of one fixed-length group of bits called a block.[2] A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.[3][4][5]  Most modes require a unique binary sequence, often called an initialization vector (IV), for each encryption operation. The IV has to be non-repeating and, for some modes, random as well. The initialization vector is used to ensure distinct ciphertexts are produced even when the same plaintext is encrypted multiple times independently with the same key.[6] Block ciphers may be capable of operating on more than one block size, but during transformation the block size is always fixed. Block cipher modes operate on whole blocks and require that the last part of the data be padded to a full block if it is smaller than the current block size.[2] There are, however, modes that do not require padding because they effectively use a block cipher as a stream cipher.  Historically, encryption modes have been studied extensively in regard to their error propagation properties under various scenarios of data modification. Later development regarded integrity protection as an entirely separate cryptographic goal. Some modern modes of operation combine confidentiality and authenticity in an efficient way, and are known as authenticated encryption modes.[7]
 
-### 183. What is a stream cipher? Name a most widely used stream cipher.
+
+### 183. What is a stream cipher? 
+
 
 ### 184. What is one-way hash function?
+A one-way hash function, also known as a message digest, fingerprint or compression function, is a mathematical function which takes a variable-length input string and converts it into a fixed-length binary sequence. Furthermore, a one-way hash function is designed in such a way that it is hard to reverse the process, that is, to find a string that hashes to a given value (hence the name one-way.) A good hash function also makes it hard to find two strings that would produce the same hash value.
+
 
 ### 185. What is collision when we talk about hash functions?
+If two separate inputs produce the same hash output, it is called a collision. This collision can then be exploited by any application that compares two hashes together – such as password hashes, file integrity checks, etc.
+
 
 ### 186. What are the applications of a hash function?
+A cryptographic hash function (CHF) is a mathematical algorithm that maps data of arbitrary size (often called the "message") to a bit array of a fixed size (the "hash value", "hash", or "message digest"). It is a one-way function, that is, a function which is practically infeasible to invert.[1] Ideally, the only way to find a message that produces a given hash is to attempt a brute-force search of possible inputs to see if they produce a match, or use a rainbow table of matched hashes. Cryptographic hash functions are a basic tool of modern cryptography.[2]
 
 ### 187. What is trapdoor function?
+A trapdoor function is a function that is easy to compute in one direction, yet difficult to compute in the opposite direction (finding its inverse) without special information, called the "trapdoor". Trapdoor functions are widely used in cryptography.
 
 ### 188. Cryptographically speaking, what is the main method of building a shared secret over a public medium?
+Diffie–Hellman key exchange (DH) is a method of securely exchanging cryptographic keys over a public channel and was one of the first public-key protocols as originally conceptualized by Ralph Merkle and named after Whitfield Diffie and Martin Hellman. DH is one of the earliest practical examples of public key exchange implemented within the field of cryptography.
+
+Traditionally, secure encrypted communication between two parties required that they first exchange keys by some secure physical channel, such as paper key lists transported by a trusted courier. The Diffie–Hellman key exchange method allows two parties that have no prior knowledge of each other to jointly establish a shared secret key over an insecure channel. This key can then be used to encrypt subsequent communications using a symmetric key cipher.
+
+Diffie–Hellman is used to secure a variety of Internet services. However, research published in October 2015 suggests that the parameters in use for many DH Internet applications at that time are not strong enough to prevent compromise by very well-funded attackers, such as the security services of large governments.
 
 ### 189. What’s the difference between Diffie-Hellman and RSA?
+The Diffie-Hellman approach has each party generate both a public and private key, but only the public key is shared. Once the client on either end of the transaction has verified the other person’s public key, the exchange can be shared.
+
+Because the Diffie-Hellman Key Exchange doesn’t authenticate either party, a hacker could more easily send spoof messages posing as one of the parties in the transaction. For this reason, the Diffie-Hellman approach requires an additional digital signature component. Both RSA and the Diffie-Hellman Exchange have their merits, with technology professionals commonly choosing one over the other due to their own personal preferences. RSA permits digital signatures, a key differentiator from the Diffie-Hellman approach.
+
+Although both the Diffie-Hellman Key Exchange and RSA are the most popular encryption algorithms, RSA tends to be more popular for securing information on the internet. 
+
 
 ### 190. What kind of attack is a standard Diffie-Hellman exchange vulnerable to?
 
