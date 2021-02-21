@@ -14,7 +14,7 @@
 
 ## [General](##general)
 
-### [1. What is information security and how is it achieved?](###what-is-information-security-and how-is-it-achieved)
+### 1. What is information security and how is it achieved?
 
 > Information Security is not only about securing information from unauthorized access. Information Security is basically the practice of preventing unauthorized access, use, disclosure, disruption, modification, inspection, recording or destruction of information.
 
