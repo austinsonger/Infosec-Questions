@@ -1313,25 +1313,40 @@ Although both the Diffie-Hellman Key Exchange and RSA are the most popular encry
 
 
 ### 190. What kind of attack is a standard Diffie-Hellman exchange vulnerable to?
+The Diffie-Hellman key exchange is vulnerable to a man-in-the-middle attack. In this attack, an opponent Carol intercepts Alice's public value and sends her own public value to Bob. When Bob transmits his public value, Carol substitutes it with her own and sends it to Alice. Carol and Alice thus agree on one shared key and Carol and Bob agree on another shared key. After this exchange, Carol simply decrypts any messages sent out by Alice or Bob, and then reads and possibly modifies them before re-encrypting with the appropriate key and transmitting them to the other party. This vulnerability is present because Diffie-Hellman key exchange does not authenticate the participants. Possible solutions include the use of digital signatures and other protocol variants.
+
 
 ### 191. What’s the difference between encoding, encryption, and hashing?
+Encoding: Reversible transformation of data format, used to preserve usability of data. Hashing: Is a one-way summary of data, cannot be reversed, used to validate the integrity of data. Encryption: Secure encoding of data used to protect confidentiality of data.
 
 ### 192. In public-key cryptography you have a public and a private key, and you often perform both encryption and signing functions. Which key is used for which function?
+Unlike symmetric cryptography, public key cryptography uses two different keys - one public and one private. The keys are mathematically related, yet it is computationally infeasible to deduce one from the other. Anyone with the public key can encrypt a message but not decrypt it. Only the person with the private key can decrypt the message.
 
 ### 193. What’s the difference between Symmetric and Asymmetric encryption?
+Symmetric encryption uses a single key that needs to be shared among the people who need to receive the message while asymmetric encryption uses a pair of public key and a private key to encrypt and decrypt messages when communicating.
 
 ### 194. If you had to both encrypt and compress data during transmission, which would you do first, and why?
+Compress first. If you encrypt then your data turns into (essentially) a stream of random bits. Random bits are incompressable because compression looks for patterns in the data and a random stream, by definition, has no patterns. Of course it matters.
 
 ### 195. What is SSL and why is it not enough when it comes to encryption?
+SSL is great, but it is simply not enough. The interception the data packets flowing between visitor and website is only one way internet criminals gain access to sensitive information. If SSL has not been properly implemented, some content on a site may NOT covered by the encryption expected.
 
 ### 196. What is salting, and why is it used?
+In cryptography, a salt is random data that is used as an additional input to a one-way function that hashes data, a password or passphrase. Salts are used to safeguard passwords in storage. Historically a password was stored in plaintext on a system, but over time, additional safeguards were developed to protect a user's password against being read from the system. A salt is one of those methods.  A new salt is randomly generated for each password. In a typical setting, the salt and the password (or its version after key stretching) are concatenated and processed with a cryptographic hash function, and the output hash value (but not the original password) is stored with the salt in a database. Hashing allows for later authentication without keeping and therefore risking exposure of the plaintext password in the event that the authentication data store is compromised.
 
 ### 197. What are salted hashes?
 
+Salting hashes sounds like one of the steps of a hash browns recipe, but in cryptography, the expression refers to adding random data to the input of a hash function to guarantee a unique output, the hash, even when the inputs are the same.
+
+
 ### 198. What is the Three-way handshake? How can it be used to create a DOS attack?
+The three-way handshake is initiated when the client system sends a SYN message to the server. The server then receives the message and responds with a SYN-ACK message back to the client. Finally, the client confirms the connection with a final ACK message
 
 ### 199. What’s more secure, SSL or HTTPS?
+SSL (and it’s more recent form TLS) are ways of encrypting a connection. It’s most well known use is in HTTPS where it is used to encrypt HTTP traffic but it can also encrypt other traffic (e.g. email traffic).
+
+So HTTPS used SSL/TLS. So asking which is more secure doesn’t make sense. One is used to provide the other.
 
 ### 200. Can you describe rainbow tables?
-
+A rainbow table is a precomputed table for caching the output of cryptographic hash functions, usually for cracking password hashes. Tables are usually used in recovering a key derivation function (or credit card numbers, etc.) up to a certain length consisting of a limited set of characters. It is a practical example of a space–time tradeoff, using less computer processing time and more storage than a brute-force attack which calculates a hash on every attempt, but more processing time and less storage than a simple key derivation function with one entry per hash. Use of a key derivation that employs a salt makes this attack infeasible.
 
