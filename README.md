@@ -1,3 +1,5 @@
+Please read CONTRIBUTING.md to contribute
+
 # Content
 
 - [General](#general)
